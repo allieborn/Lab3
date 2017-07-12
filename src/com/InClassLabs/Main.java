@@ -9,25 +9,22 @@ public class Main {
         System.out.println("Learn your squares and cubes!");
         System.out.println();
 
-        boolean keepGoing = true;
+        String userInput;
 
-        while (keepGoing) {
+        do {
             System.out.println("Enter an integer: ");
             int userNum = scan.nextInt();
             System.out.println("Number" + "\tSquared" + "\tCubed");
             for (int i = 1; i <= userNum; i++) {
                 System.out.println(i + "\t" + (i * i) + "\t" + (i * i * i));
-
             }
             scan.nextLine();
             System.out.println("Continue? Y/N:");
-            String userInput = scan.nextLine();
-            userInput.toUpperCase();
-            if (userInput.equals("N")){
-                keepGoing = false;
+            userInput = scan.nextLine();
+            if (userInput.equalsIgnoreCase("n")){
                 System.out.println("Goodbye.");
             }
-        }
+        } while (userInput.equalsIgnoreCase("y"));
 
     }
 }
